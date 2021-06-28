@@ -3,7 +3,7 @@
 *.iws
 *.iml
 */out/
-
+*.json
 # Maven
 target/
 .mvn/wrapper/maven-wrapper.jar

@@ -1,9 +1,9 @@
-package org.example.task;
+package org.example.task.model;
 
 import lombok.Data;
 
 @Data
-public abstract class Task implements Executable, Comparable<Task> {
+public abstract class Task implements Comparable<Task> {
 
     private String name;
 

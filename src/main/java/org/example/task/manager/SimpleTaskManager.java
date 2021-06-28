@@ -1,15 +1,19 @@
-package org.example.manager;
+package org.example.task.manager;
 
-import org.example.task.Category;
-import org.example.task.Priority;
-import org.example.task.Task;
+import lombok.Getter;
+import lombok.Setter;
+import org.example.task.model.Category;
+import org.example.task.model.Priority;
+import org.example.task.model.Task;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BasicTaskManager implements TaskManager {
+@Getter
+@Setter
+public class SimpleTaskManager implements TaskManager {
 
     private List<Task> tasks = new ArrayList<>();
 
@@ -18,17 +22,12 @@ public class BasicTaskManager implements TaskManager {
         tasks.add(task);
     }
 
-    @Override
-    public List<Task> getAll() {
-        return tasks;
-    }
-
     /**
      * Sorts by priority in descending manner (from highest to lowest).
      */
     @Override
-    public void sortByPriority() {
-        tasks = tasks.stream()
+    public List<Task> sortByPriority() {
+        return tasks.stream()
                 .sorted(Collections.reverseOrder())
                 .collect(Collectors.toList());
     }

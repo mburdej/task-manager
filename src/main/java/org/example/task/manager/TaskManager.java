@@ -1,18 +1,20 @@
-package org.example.manager;
+package org.example.task.manager;
 
-import org.example.task.Category;
-import org.example.task.Priority;
-import org.example.task.Task;
+import org.example.task.model.Category;
+import org.example.task.model.Priority;
+import org.example.task.model.Task;
 
 import java.util.List;
 
 public interface TaskManager {
 
+    void setTasks(List<Task> tasks);
+
     void add(Task task);
 
-    List<Task> getAll();
+    List<Task> getTasks();
 
-    void sortByPriority();
+    List<Task> sortByPriority();
 
     List<Task> getDistinctTasks();
 

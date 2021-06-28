@@ -1,11 +1,13 @@
 package org.example.user;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@Builder
-public class User<ID> {
+@Getter
+@Setter
+@AllArgsConstructor
+public abstract class User<ID> {
 
     private ID id;
 
